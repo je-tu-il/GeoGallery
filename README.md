@@ -1,47 +1,68 @@
-# GeoGallery - Map Photos
+# 🗺️ GeoGallery — Map Photos & Videos
 
-Une application web locale permettant de visualiser des photos et vidéos géolocalisées sur une carte interactive. Conçue pour être rapide et respecter la vie privée : l'extraction des données GPS (EXIF) se fait intégralement côté client dans le navigateur.
+[![Live Demo](https://img.shields.io/badge/Demo%20en%20Ligne-Tester%20sur%20GitHub%20Pages-success?style=for-the-badge&logo=github)](https://je-tu-il.github.io/GeoGallery/)
+[![React](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6.svg?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC.svg?logo=tailwind-css)](https://tailwindcss.com/)
+[![Leaflet](https://img.shields.io/badge/Map-Leaflet%20%2F%20OpenStreetMap-199900.svg?logo=leaflet)](https://leafletjs.com/)
+[![Privacy 100%](https://img.shields.io/badge/Privacy-100%25%20Client--Side-brightgreen.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 🌟 Fonctionnalités Principales
+> Visualisez instantanément vos photos et vidéos de vacances sur une **carte interactive mondiale**, sans envoyer le moindre fichier sur internet.  
+> L'extraction des coordonnées GPS (données EXIF) s'exécute intégralement dans votre navigateur en local.
 
-- **Cartographie Interactive** : Base OpenStreetMap via Leaflet avec gestion fluide des marqueurs.
-- **Extraction EXIF Locale** : Utilisation de `exifreader` pour lire les métadonnées directement depuis vos fichiers locaux sans aucun upload serveur.
-- **Performances Optimisées** : Importation asynchrone par lots (chunking) garantissant une interface réactive même lors du chargement de milliers de photos.
-- **Support Multimédia** : Prise en charge des images (`.jpg`, `.png`, `.heic`) et des vidéos (`.mp4`, `.mov`) avec lecteur intégré dans les popups de la carte.
-- **Filtres Avancés** :
-  - Filtrage par période (Date de prise de vue).
-  - Barre de recherche géographique (Géocodage via l'API publique Nominatim).
-- **UI Moderne** : Interface adaptative propulsée par Tailwind CSS v4.
+---
 
-## 🛠️ Prérequis
+## ⚡ Utilisation Immédiate (Sans Installation)
 
-- Node.js (version 18 ou supérieure recommandée)
+👉 **[Ouvrir GeoGallery en ligne : https://je-tu-il.github.io/GeoGallery/](https://je-tu-il.github.io/GeoGallery/)**
 
-## 🚀 Installation et Lancement
+1. Ouvrez le lien dans Chrome, Edge, Firefox ou Safari.
+2. Cliquez sur **"Sélectionner un dossier"** (ou glissez-déposez vos photos).
+3. Vos photos et vidéos géolocalisées apparaissent immédiatement sous forme de marqueurs sur la carte !
 
-1. Installez les dépendances :
-   ```bash
-   npm install
-   ```
-2. Lancez le serveur de développement :
-   ```bash
-   npm run dev
-   ```
-3. Ouvrez votre navigateur sur `http://localhost:5173`
+---
 
-## 📖 Utilisation
+## 🔒 Confidentialité Totale (Zéro Upload)
 
-1. Cliquez sur le bouton **"Sélectionner un dossier"** dans la barre latérale.
-2. Choisissez un répertoire local contenant vos souvenirs. Note : le navigateur demandera l'autorisation d'accéder aux fichiers.
-3. Le traitement est instantané et progressif. Les médias possédant des coordonnées GPS apparaîtront sur la carte.
-4. Cliquez sur un marqueur pour visualiser le média.
-5. Utilisez les filtres à gauche pour recentrer la carte sur une ville spécifique ou filtrer par période de vacances.
+- 🛡️ **Vos médias ne quittent jamais votre appareil.**
+- 💻 Le décodage des métadonnées EXIF est effectué par l'API `File System Access` et le module `exifreader` directement dans le moteur JavaScript de votre navigateur.
+- ⚡ **Aucun serveur backend, aucune base de données distante, aucun compte requis.**
 
-## 💻 Stack Technique
+---
 
-- **Framework** : React 18 + Vite (TypeScript)
-- **Style** : Tailwind CSS v4
-- **Carte** : Leaflet & React-Leaflet
-- **Méta-données** : ExifReader
-- **Icônes** : Lucide React
-"# GeoGallery" 
+## ✨ Fonctionnalités Clés
+
+- 🗺️ **Cartographie OpenStreetMap & Leaflet** : Navigation fluide, zoom, clusters et regroupement dynamique des médias par zone.
+- 📸 **Support Multimédia Complet** :
+  - Images : `.jpg`, `.jpeg`, `.png`, `.heic` (formats modernes smartphone).
+  - Vidéos : `.mp4`, `.mov` avec lecteur vidéo directement intégré dans les bulles de la carte.
+- ⚡ **Performances Ultra-Rapides (Batching)** : Traite des milliers de photos en quelques secondes grâce à un algorithme d'analyse asynchrone par lots sans geler l'interface.
+- 🔍 **Recherche et Filtres Temporels** :
+  - Filtrez par date (ex: retrouvez uniquement vos vacances d'été 2024).
+  - Barre de recherche de ville avec géocodage instantané (Nominatim).
+- 🎨 **Interface Sombre Moderne** : Conçue avec Tailwind CSS et des icônes Lucide.
+
+---
+
+## 🛠️ Lancement pour Développeurs (Code Source)
+
+```bash
+git clone https://github.com/je-tu-il/GeoGallery.git
+cd GeoGallery
+npm install
+npm run dev
+```
+
+Ouvrez `http://localhost:5173`.
+
+### Compilation Production
+```bash
+npm run build
+```
+
+---
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Libre d'utilisation et d'adaptation.
