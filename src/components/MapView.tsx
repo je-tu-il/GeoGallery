@@ -39,7 +39,7 @@ export function MapView({ media, region }: MapViewProps) {
   const defaultCenter: [number, number] = [46.603354, 1.888334]; // Center of France
 
   return (
-    <div className="flex-1 h-screen relative bg-muted/20">
+    <div className="geo-map relative bg-muted/20">
       <MapContainer
         center={defaultCenter}
         zoom={6}

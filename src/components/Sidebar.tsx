@@ -65,15 +65,15 @@ export function Sidebar({ media, setMedia, filter, setFilter }: SidebarProps) {
   };
 
   return (
-    <div className="w-80 h-screen bg-card border-r border-border flex flex-col shadow-xl z-10">
-      <div className="p-4 border-b border-border bg-muted/20">
+    <div className="geo-sidebar bg-card border-r border-border flex flex-col z-10">
+      <div className="geo-side-heading border-b border-border">
         <h1 className="text-xl font-bold text-foreground flex items-center gap-2">
           <MapPin className="text-primary" /> GeoGallery
         </h1>
         <p className="text-xs text-muted-foreground mt-1">Vos souvenirs géolocalisés</p>
       </div>
 
-      <div className="p-4 flex flex-col gap-5 overflow-y-auto flex-1">
+      <div className="geo-control-stack p-4 flex flex-col gap-5 overflow-y-auto flex-1">
         {/* Import Section */}
         <section className="space-y-2">
           <h2 className="text-sm font-semibold text-foreground">Importer des médias</h2>
@@ -128,9 +128,10 @@ export function Sidebar({ media, setMedia, filter, setFilter }: SidebarProps) {
               />
               <button
                 onClick={handleSearch}
-                className="bg-secondary text-secondary-foreground p-1.5 rounded-md hover:bg-secondary/80 transition-colors"
+                aria-label="Rechercher le lieu"
+                className="bg-secondary text-secondary-foreground min-h-10 min-w-10 grid place-items-center rounded-md hover:bg-secondary/80 transition-colors"
               >
-                <Search className="w-4 h-4" />
+                <Search className="w-4 h-4" aria-hidden="true" />
               </button>
             </div>
           </div>

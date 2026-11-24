@@ -20,7 +20,7 @@ export default function App() {
   }, [media, filter.startDate, filter.endDate]);
 
   return (
-    <div className="flex w-full h-screen overflow-hidden bg-background">
+    <div className="geo-gallery w-full overflow-hidden bg-background">
       <Sidebar 
         media={filteredMedia} 
         setMedia={setMedia} 

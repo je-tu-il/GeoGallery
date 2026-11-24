@@ -106,3 +106,20 @@
 .marker-cluster-large {
   @apply bg-primary/50;
 }
+
+/* Atlas workspace */
+.geo-gallery { display: grid; grid-template-columns: minmax(285px, 23rem) minmax(0, 1fr); height: 100dvh; }
+.geo-sidebar, .geo-map { min-width: 0; min-height: 0; height: 100%; }
+.geo-side-heading { padding: 22px 20px; background: linear-gradient(110deg, var(--muted), var(--card)); }
+.geo-side-heading h1 { font-size: 1.55rem; line-height: 1.16; letter-spacing: -.045em; }
+.geo-side-heading p { margin-top: 6px; font-size: .875rem; }
+.geo-control-stack > section + section { border-top: 1px solid var(--border); padding-top: 14px; }
+.geo-control-stack h2 { font-size: .92rem; }
+.geo-gallery :where(button, input):focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+@media (max-width: 720px) {
+  .geo-gallery { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(220px, 44dvh) minmax(0, 1fr); }
+  .geo-map { grid-row: 1; }
+  .geo-sidebar { grid-row: 2; border-top: 1px solid var(--border); border-right: 0; }
+  .geo-side-heading { padding: 12px 16px; }
+  .geo-side-heading h1 { font-size: 1.18rem; }
+}
